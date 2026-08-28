@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Happy Birthday, Ezza 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ AUDIO (ganti src di audio/backsound.mp3) ============ -->
+<audio id="bgm" src="audio/backsound.mp3" loop preload="none"></audio>
+<button class="music-toggle" id="musicToggle" aria-label="Mute/unmute musik">🔇</button>
+
+<!-- ============ LANDING / GERBANG MASUK ============ -->
+<div class="landing" id="landing">
+  <div class="petal-layer" id="landingPetals"></div>
+  <div class="landing-content">
+    <svg class="torii" viewBox="0 0 240 160" aria-hidden="true">
+      <rect x="20" y="34" width="200" height="12" rx="2"/>
+      <rect x="10" y="50" width="220" height="8" rx="2"/>
+      <rect x="46" y="58" width="14" height="92"/>
+      <rect x="180" y="58" width="14" height="92"/>
+      <rect x="110" y="46" width="20" height="10"/>
+    </svg>
+    <p class="kicker">selamat datang di</p>
+    <h1 class="landing-title">Chapter 23<br><span>Ezza</span></h1>
+    <p class="landing-sub script">satu undangan kecil, penuh kejutan di dalamnya</p>
+    <button class="enter-btn" id="enterBtn">Buka Undangan 🌸</button>
+  </div>
+</div>
+
+<!-- ============ SITU UTAMA ============ -->
+<div id="mainSite">
+
+<div class="rays"></div>
+<div id="petals-ambient"></div>
+<canvas id="confetti-canvas"></canvas>
+
+<div class="lightbox" id="lightbox">
+  <button class="close" id="lightboxClose">✕</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="kicker">chapter 23 · ezza's day</div>
+  <h1>Happy Birthday,<br><span class="accent">Ezza</span></h1>
+  <p class="sub">gak perlu kata-kata mewah, aku cuma mau bilang: makasih udah jadi kamu, dan selamat merayakan satu tahun lagi perjalananmu 🌸</p>
+  <div class="age-chip">🎂 sekarang udah <b>23</b> tahun</div>
+  <div class="scroll-hint"><span>scroll, ada kejutan di bawah</span><span class="arrow">↓</span></div>
+</section>
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,32 C240,80 480,0 720,24 C960,48 1200,88 1440,40 L1440,80 L0,80 Z" fill="rgba(255,255,255,0.03)"/></svg>
+</div>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline">
+  <div class="card reveal">
+    <span class="eyebrow">perjalanan</span>
+    <h2 class="section-title">Dari dulu sampai sekarang</h2>
+    <p class="section-lead">dua versi Ezza yang aku sayang — yang dulu maupun yang sekarang.</p>
+    <div class="timeline">
+      <div class="tl-photo">
+        <div class="frame lightbox-trigger"><img src="images/ezza-baby.jpeg" alt="Ezza waktu kecil"></div>
+        <div class="cap">Ezza kecil, masih polos banget 🍼</div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-photo">
+        <div class="frame lightbox-trigger"><img src="images/ezza-solo.jpeg" alt="Ezza sekarang"></div>
+        <div class="cap">Ezza sekarang, versi paling aku sayang 🖤</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACHIEVEMENT ============ -->
+<section id="achievement">
+  <div class="card reveal">
+    <span class="eyebrow">tahun ini</span>
+    <h2 class="section-title">Beberapa hal yang bikin aku bangga</h2>
+    <p class="section-lead">klik kartunya, ada sedikit apresiasi buat kamu.</p>
+    <div class="flip-wrap">
+      <div class="flip-card" id="flipCard">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <img src="images/graduation.jpeg" alt="Momen bangga Ezza">
+            <div class="tag">salah satu momen yang bikin aku ikut senyum</div>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="ic">🏆</div>
+            <h3>Proud of you</h3>
+            <p>Banyak hal yang udah kamu lewatin tahun ini, gak semuanya keliatan dari luar, tapi aku tau kamu kerja keras buat itu. Progres sekecil apapun tetap progres. Kamu makin kuat, makin dewasa, dan makin siap buat apapun yang datang berikutnya.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="flip-hint">tap kartunya buat baca pesannya</p>
+    <div class="badge-row" id="badgeRow"></div>
+  </div>
+</section>
+
+<!-- ============ PRAISE CAROUSEL ============ -->
+<section id="praise">
+  <div class="card reveal">
+    <span class="eyebrow">buat dibaca pelan-pelan</span>
+    <h2 class="section-title">Alasan aku bangga sama kamu</h2>
+    <div class="praise-card"><p id="praiseText"></p></div>
+    <div class="praise-nav">
+      <button id="praisePrev" aria-label="sebelumnya">←</button>
+      <button id="praiseNext" aria-label="selanjutnya">→</button>
+    </div>
+    <div class="praise-dots" id="praiseDots"></div>
+  </div>
+</section>
+
+<!-- ============ CAKE ============ -->
+<section class="cake-section" id="cake">
+  <div class="card reveal">
+    <span class="eyebrow">tiup lilinnya</span>
+    <h2 class="section-title">Bikin satu permintaan</h2>
+    <button class="candle-btn" id="candleBtn" aria-label="Tiup lilin">🎂</button>
+    <p class="cake-hint">klik kuenya, terus tutup mata bentar</p>
+    <p class="wish-result" id="wishResult">semoga tahun ini semua yang kamu usahain pelan-pelan kesampaian 🌸</p>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="memories">
+  <div class="card reveal">
+    <span class="eyebrow">kenangan</span>
+    <h2 class="section-title">Sedikit dari banyak momen kita</h2>
+    <div class="polaroid-grid" id="polaroidGrid"></div>
+  </div>
+</section>
+
+<!-- ============ OMIKUJI (UNDIAN PESAN) ============ -->
+<section class="bottle-section" id="omikuji">
+  <div class="card reveal">
+    <span class="eyebrow">interaktif</span>
+    <h2 class="section-title">Undian keberuntungan</h2>
+    <div class="bottle-stage">
+      <button class="bottle-btn" id="omikujiBtn" aria-label="Ambil undian">🎋</button>
+      <p class="bottle-hint">klik buat ambil satu pesan, tiap klik hasilnya beda</p>
+      <div class="bottle-note" id="omikujiNote"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOVE LETTER ============ -->
+<section class="letter-section" id="letter">
+  <div class="card reveal">
+    <span class="eyebrow">surat kecil</span>
+    <h2 class="section-title">Ada titipan surat...</h2>
+    <div class="envelope" id="envelope">
+      <span class="seal">💌</span>
+      <span class="tap-label">tap buat buka</span>
+    </div>
+    <div class="letter-paper" id="letterPaper">
+      Hai Ezza,<br><br>
+      Selamat ulang tahun ke-23. Makasih udah selalu jadi tempat aku pulang, dan udah berjuang keras buat banyak hal tahun ini — aku liat sendiri prosesnya, dan aku bangga sama kamu.<br><br>
+      Semoga tahun ini kamu makin sehat, makin dimudahkan urusannya, dan makin percaya sama semua hal baik yang lagi kamu usahain. Aku selalu di sini, sepelan atau serumit apapun prosesnya.
+      <div class="sign">— selalu, aku 🌸</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REASONS ============ -->
+<section id="reasons">
+  <div class="card reveal">
+    <span class="eyebrow">random tapi jujur</span>
+    <h2 class="section-title">Alasan kenapa kamu tuh spesial</h2>
+    <div class="chips-grid" id="chipsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ FUN STATS ============ -->
+<section id="stats">
+  <div class="card reveal">
+    <span class="eyebrow">statistik gak penting tapi bener</span>
+    <h2 class="section-title">Sedikit fakta tentang kita</h2>
+    <div class="stats-grid" id="statsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section id="quiz">
+  <div class="card reveal">
+    <span class="eyebrow">seberapa merhatiin halaman ini?</span>
+    <h2 class="section-title">Kuis kecil buat Ezza</h2>
+    <div class="quiz-wrap">
+      <div class="quiz-progress" id="quizProgress"></div>
+      <div class="quiz-q" id="quizQ"></div>
+      <div class="quiz-opts" id="quizOpts"></div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WISH FORM ============ -->
+<section class="final-section" id="wish">
+  <div class="card reveal wish-box">
+    <span class="eyebrow">buat kamu</span>
+    <h2 class="section-title">Tulis harapan buat tahun ini</h2>
+    <input type="text" id="wishName" placeholder="nama kamu (opsional)">
+    <textarea id="wishInput" placeholder="tulis satu harapan atau doa buat Ezza..."></textarea>
+    <br>
+    <button class="btn" id="saveWish">Simpan & rayakan 🎈</button>
+    <div class="saved-msgs" id="savedMsgs"></div>
+  </div>
+</section>
+
+<footer>dibuat dengan 🌸 khusus buat Ezza — happy birthday, sayang</footer>
+
+</div><!-- /mainSite -->
+
+<script src="js/script.js"></script>
+</body>
+</html>
