@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep:#090b12;
-    --panel: rgba(255,255,255,0.055);
-    --panel-border: rgba(255,255,255,0.14);
-    --cyan:#e31b23;
-    --cyan-soft:#ff5960;
-    --teal:#b40009;
-    --foam:#fff7f7;
-    --text:#ffe9ea;
-    --text-soft:#c9a9aa;
+    --deep:#020b1d;
+    --panel: rgba(7,28,57,0.58);
+    --panel-border: rgba(94,181,255,0.22);
+    --cyan:#1597e5;
+    --cyan-soft:#67c7ff;
+    --teal:#0759a5;
+    --foam:#eaf7ff;
+    --text:#dceeff;
+    --text-soft:#9db9d3;
     --gold:#ffffff;
     --shadow: 0 24px 60px rgba(0,10,25,0.5);
   }
@@ -28,7 +28,7 @@
     font-family:'Poppins', sans-serif;
     color:var(--text);
     background: linear-gradient(180deg,
-      #26070a 0%, #170b10 18%, #0c0e15 42%, #080a10 70%, #05060a 100%),
+      #041b3d 0%, #03152f 20%, #041128 45%, #020c20 72%, #010714 100%),
       var(--deep);
     position:relative;
     overflow-x:hidden;
@@ -616,14 +616,14 @@ section{width:100%;padding-left:20px;padding-right:20px}
 .landing-title{margin:0;font-size:clamp(40px,8vw,64px);line-height:.98;letter-spacing:-.035em;color:#fff;text-shadow:0 5px 24px rgba(0,0,0,.3);}
 .landing-title span{color:#ff4a5d;text-shadow:0 0 24px rgba(255,60,80,.18);}
 .landing-sub{max-width:370px;margin:17px auto 0;font-size:clamp(16px,3.5vw,20px);line-height:1.45;color:#d8e8f7;}
-.enter-btn{position:relative;overflow:hidden;width:min(100%,310px);margin:25px auto 0;padding:16px 24px;border:2px solid rgba(255,255,255,.9);border-radius:999px;background:linear-gradient(135deg,#e62d49,#b91835 58%,#d62644);color:#fff;font-family:'Comfortaa',sans-serif;font-size:14px;font-weight:800;letter-spacing:.02em;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 0 5px rgba(230,45,73,.1),0 0 24px rgba(230,45,73,.22);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;animation:spiderButtonPulse 2.3s ease-in-out infinite;}
+.enter-btn{position:relative;overflow:hidden;width:min(100%,310px);margin:25px auto 0;padding:16px 24px;border:2px solid rgba(255,255,255,.9);border-radius:999px;background:linear-gradient(135deg,#0f8fe0,#b91835 58%,#d62644);color:#fff;font-family:'Comfortaa',sans-serif;font-size:14px;font-weight:800;letter-spacing:.02em;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 0 5px rgba(21,151,229,.12),0 0 24px rgba(230,45,73,.22);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;animation:spiderButtonPulse 2.3s ease-in-out infinite;}
 .enter-btn::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.34) 48%,transparent 65%);transform:translateX(-120%);transition:transform .6s ease;}
 .enter-btn:hover{transform:translateY(-3px) scale(1.015);filter:saturate(1.08);box-shadow:0 16px 34px rgba(0,0,0,.4),0 0 0 6px rgba(230,45,73,.12),0 0 32px rgba(230,45,73,.3);}
 .enter-btn:hover::before{transform:translateX(120%);}
 .enter-btn:active{transform:translateY(1px) scale(.97);}
 .enter-btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.38);transform:scale(0);animation:buttonRipple .65s ease-out;pointer-events:none;}
 @keyframes buttonRipple{to{transform:scale(5);opacity:0}}
-@keyframes spiderButtonPulse{0%,100%{box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 0 5px rgba(230,45,73,.1),0 0 24px rgba(230,45,73,.18)}50%{box-shadow:0 14px 34px rgba(0,0,0,.38),0 0 0 8px rgba(230,45,73,.08),0 0 34px rgba(230,45,73,.28)}}
+@keyframes spiderButtonPulse{0%,100%{box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 0 5px rgba(21,151,229,.12),0 0 24px rgba(21,151,229,.18)}50%{box-shadow:0 14px 34px rgba(0,0,0,.38),0 0 0 8px rgba(230,45,73,.08),0 0 34px rgba(21,151,229,.28)}}
 .landing-note{margin:13px 0 0;color:#91abc5;font-size:11px;letter-spacing:.04em;}
 .landing-spider-web{position:absolute;z-index:1;opacity:.25;pointer-events:none;}
 .landing-web-left{left:-45px;bottom:4%;width:180px;transform:rotate(-18deg);}
@@ -660,32 +660,69 @@ section{width:100%;padding-left:20px;padding-right:20px}
   .card{background:linear-gradient(145deg,rgba(35,10,13,.82),rgba(7,9,14,.78));border-color:rgba(227,27,35,.35);box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 30px rgba(227,27,35,.08);}
   .eyebrow{color:#ff3b43;text-shadow:0 0 14px rgba(227,27,35,.35);}
   .section-title{color:#fff7f7;text-shadow:0 0 24px rgba(227,27,35,.22);}
-  .hero .kicker{color:#ff5960;}
-  .hero h1 .accent{background:linear-gradient(90deg,#ff3138,#b40009);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero .kicker{color:#67c7ff;}
+  .hero h1 .accent{background:linear-gradient(90deg,#ff3138,#0759a5);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .age-chip{background:rgba(227,27,35,.10);border-color:rgba(227,27,35,.38);box-shadow:0 0 30px rgba(227,27,35,.14);}
-  .age-chip b{color:#ff5960;}
+  .age-chip b{color:#67c7ff;}
   .scroll-hint .arrow,.tl-arrow{color:#ff3138;}
   .depth-meter .fill{background:linear-gradient(180deg,#ff3138,#8e0007);}
-  .depth-meter .readout{color:#ff5960;background:rgba(20,4,7,.72);border-color:rgba(227,27,35,.35);}
-  .btn,.enter-btn{background:linear-gradient(135deg,#ff2630,#b40009)!important;border-color:#ff5960!important;box-shadow:0 12px 30px rgba(0,0,0,.4),0 0 24px rgba(227,27,35,.22)!important;}
+  .depth-meter .readout{color:#67c7ff;background:rgba(20,4,7,.72);border-color:rgba(227,27,35,.35);}
+  .btn,.enter-btn{background:linear-gradient(135deg,#ff2630,#0759a5)!important;border-color:#67c7ff!important;box-shadow:0 12px 30px rgba(0,0,0,.4),0 0 24px rgba(227,27,35,.22)!important;}
   .btn:hover,.enter-btn:hover{filter:brightness(1.12);transform:translateY(-3px) scale(1.02);}
   .compare-card,.flip-face,.arcade-card,.praise-card,.bottle-stage,.letter-paper{border-color:rgba(227,27,35,.28)!important;}
-  .compare-pill.now{background:#b40009!important;color:#fff!important;}
-  .compare-line{background:linear-gradient(90deg,#ff3138,#b40009)!important;}
+  .compare-pill.now{background:#0759a5!important;color:#fff!important;}
+  .compare-line{background:linear-gradient(90deg,#ff3138,#0759a5)!important;}
   .landing-spider-web{opacity:.45!important;filter:drop-shadow(0 0 8px rgba(227,27,35,.35));}
   .music-player{background:rgba(13,7,10,.88)!important;border-color:rgba(227,27,35,.4)!important;}
-  .music-toggle{background:#b40009!important;}
-  .music-player strong{color:#ff5960!important;}
+  .music-toggle{background:#0759a5!important;}
+  .music-player strong{color:#67c7ff!important;}
   .quick-nav button{border-color:rgba(227,27,35,.4)!important;background:rgba(18,5,8,.85)!important;}
-  .quick-nav button:hover{background:#b40009!important;}
+  .quick-nav button:hover{background:#0759a5!important;}
   @media(max-width:600px){body:before{background-size:120px 120px;opacity:.11}.card{border-radius:22px;}}
 
+</style>
+
+<style id="ocean-theme-overrides">
+:root{
+  --ocean-deep:#010817; --ocean-mid:#031b3d; --ocean-blue:#087fd1; --ocean-cyan:#55c9ff;
+}
+body{
+  background:
+    radial-gradient(ellipse at 50% -12%, rgba(25,137,214,.24), transparent 48%),
+    linear-gradient(180deg,#031a3b 0%,#02152f 28%,#020e25 58%,#010817 100%);
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.32;
+  background:
+    radial-gradient(circle at 12% 22%,rgba(65,186,255,.12) 0 1px,transparent 2px),
+    radial-gradient(circle at 78% 34%,rgba(65,186,255,.10) 0 1px,transparent 2px),
+    radial-gradient(circle at 35% 72%,rgba(65,186,255,.08) 0 1px,transparent 2px);
+  background-size:180px 180px,240px 240px,210px 210px;
+}
+.rays{background:
+  linear-gradient(112deg,transparent 36%,rgba(111,211,255,.10) 43%,transparent 50%),
+  linear-gradient(76deg,transparent 50%,rgba(32,144,224,.10) 56%,transparent 63%),
+  linear-gradient(125deg,transparent 15%,rgba(126,220,255,.07) 22%,transparent 29%);
+  opacity:.9;
+}
+.card{background:linear-gradient(145deg,rgba(8,36,72,.70),rgba(2,17,39,.66));border-color:rgba(76,179,239,.22);}
+.section-title,.hero h1{text-shadow:0 0 28px rgba(35,159,225,.30);}
+.hero h1 .accent{background:linear-gradient(90deg,#43c5ff,#0b82d0);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.eyebrow,.hero .kicker{color:#55c9ff;}
+.depth-meter .fill{background:linear-gradient(180deg,#5bd3ff,#087fd1,#034a92);}
+.depth-meter .readout{background:rgba(2,23,49,.72);border-color:rgba(83,194,255,.24);color:#79d6ff;}
+.music-player{background:rgba(2,18,40,.82)!important;border-color:rgba(83,194,255,.25)!important;}
+.music-toggle{background:linear-gradient(145deg,#0d91df,#064f9a)!important;}
+.enter-btn,.btn{background:linear-gradient(135deg,#0a8fdd,#064c96)!important;box-shadow:0 12px 34px rgba(0,105,185,.30)!important;}
+.enter-btn:hover,.btn:hover{box-shadow:0 16px 40px rgba(0,142,220,.42)!important;}
+/* underwater vignette */
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:180px;pointer-events:none;
+  background:linear-gradient(transparent,rgba(1,7,20,.55));}
 </style>
 </head>
 <body>
 
 <!-- ============ AUDIO (ganti src di audio/backsound.mp3) ============ -->
-<audio id="bgm" loop preload="auto"></audio>
+<audio id="bgm" src="backsound.mp3" loop preload="auto"></audio>
 <div id="audioPickerWrap" style="position:fixed;right:14px;bottom:14px;z-index:60;display:none">
   <label style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(12,6,8,.92);border:1px solid rgba(227,27,35,.45);color:#fff;font:600 11px Poppins,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.35)">🕷️ pilih lagu<input id="audioFile" type="file" accept="audio/*" style="display:none"></label>
 </div>
@@ -1049,7 +1086,7 @@ const bgm = document.getElementById('bgm');
 const audioFile = document.getElementById('audioFile');
 const audioPickerWrap = document.getElementById('audioPickerWrap');
 if(audioFile){
-  audioPickerWrap.style.display='block';
+  audioPickerWrap.style.display='none';
   audioFile.addEventListener('change',()=>{
     const file=audioFile.files && audioFile.files[0];
     if(!file) return;
@@ -1096,7 +1133,7 @@ enterBtn.addEventListener('click',()=>{
   if(bgm){
     bgm.volume=.5;
     bgm.play().then(()=>{musicToggle.textContent='🔊';musicPlayer.classList.add('playing');musicStatus.textContent='sedang diputar';})
-      .catch(()=>{musicToggle.textContent='🎵';musicPlayer.classList.remove('playing');musicStatus.textContent=bgm.src?'tekan untuk memutar':'pilih file lagu dulu';});
+      .catch(()=>{musicToggle.textContent='🎵';musicPlayer.classList.remove('playing');musicStatus.textContent='backsound.mp3 belum ditemukan';});
   }
   setTimeout(()=>landing.classList.add('hide'),950);
 });
