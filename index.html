@@ -792,6 +792,94 @@ body::before{
 }
 </style>
 
+
+<style id="ultra-smooth-ocean">
+/* FINAL OCEAN MOTION OVERRIDE — keep motion slow and GPU-friendly */
+html{scroll-behavior:smooth}
+body{background:#020d20;isolation:isolate}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% -15%,rgba(24,112,190,.22),transparent 48%),
+    radial-gradient(ellipse at 15% 38%,rgba(0,102,180,.08),transparent 42%),
+    radial-gradient(ellipse at 85% 62%,rgba(0,70,140,.07),transparent 40%),
+    linear-gradient(180deg,#031c3e 0%,#02132f 45%,#01091c 100%);
+}
+body::after{
+  content:"";position:fixed;inset:-25%;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(105deg,transparent 0 13%,rgba(92,197,255,.022) 14%,transparent 18%),
+             repeating-linear-gradient(75deg,transparent 0 19%,rgba(52,146,220,.018) 20%,transparent 24%);
+  transform:translate3d(0,0,0) rotate(0deg);
+  animation:deepCurrent 30s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes deepCurrent{
+  0%{transform:translate3d(-1.5%,0,0) rotate(-.4deg)}
+  100%{transform:translate3d(1.5%,.8%,0) rotate(.4deg)}
+}
+.rays{
+  position:fixed;inset:0;height:75vh;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(112deg,transparent 33%,rgba(113,218,255,.055) 43%,transparent 53%),
+    linear-gradient(76deg,transparent 49%,rgba(72,178,241,.045) 58%,transparent 67%),
+    linear-gradient(126deg,transparent 12%,rgba(166,231,255,.035) 20%,transparent 29%);
+  opacity:.8;
+  transform:translate3d(0,0,0);
+  animation:raySway 24s ease-in-out infinite alternate;
+  will-change:transform,opacity;
+}
+@keyframes raySway{
+  0%{transform:translate3d(-1.2%,0,0) scaleX(1);opacity:.55}
+  100%{transform:translate3d(1.2%,.5%,0) scaleX(1.015);opacity:.82}
+}
+#bubbles{z-index:2;opacity:.75}
+.bubble{
+  animation-name:riseSmooth!important;
+  animation-timing-function:cubic-bezier(.35,.05,.25,1)!important;
+  transform:translate3d(0,0,0);will-change:transform,opacity;
+}
+@keyframes riseSmooth{
+  0%{transform:translate3d(0,20px,0) scale(.72);opacity:0}
+  12%{opacity:.34}
+  45%{transform:translate3d(var(--drift,14px),-44vh,0) scale(1);opacity:.30}
+  78%{transform:translate3d(calc(var(--drift,14px) * -0.25),-78vh,0) scale(1.04);opacity:.20}
+  100%{transform:translate3d(calc(var(--drift,14px) * .7),-116vh,0) scale(1.12);opacity:0}
+}
+/* soften cards without animating blur-heavy properties */
+.card,.music-player,.surprise-box,.praise-card,.compare-card,.arcade-card,.stat-card{backdrop-filter:blur(8px)}
+/* landing: calm water breathing */
+.landing{background:linear-gradient(180deg,#074475 0%,#042c55 45%,#02152e 100%);}
+.landing::before{
+  content:"";position:absolute;inset:-18%;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse at 50% 8%,rgba(114,224,255,.12),transparent 42%),
+    radial-gradient(ellipse at 20% 70%,rgba(22,121,205,.08),transparent 36%),
+    radial-gradient(ellipse at 80% 55%,rgba(0,80,160,.07),transparent 40%);
+  animation:landingBreath 20s ease-in-out infinite alternate;
+  will-change:transform,opacity;
+}
+@keyframes landingBreath{
+  0%{transform:translate3d(-.8%,0,0) scale(1);opacity:.66}
+  100%{transform:translate3d(.8%,.6%,0) scale(1.025);opacity:.9}
+}
+.landing::after{
+  content:"";position:absolute;inset:auto -10% -12%;height:42%;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(62,183,238,.06),transparent 62%);
+  animation:underGlow 15s ease-in-out infinite alternate;
+}
+@keyframes underGlow{from{transform:translate3d(-1%,0,0)}to{transform:translate3d(1%,0,0)}}
+.flower-burst{animation-timing-function:cubic-bezier(.18,.78,.25,1)!important}
+.reveal{transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+@media(max-width:700px){
+  .rays{height:62vh;opacity:.58}
+  body::after{opacity:.35}
+  .bubble{filter:none}
+}
+@media(prefers-reduced-motion:reduce){
+  body::after,.rays,.landing::before,.landing::after{animation:none!important}
+}
+</style>
+
 </head>
 <body>
 
@@ -1241,8 +1329,8 @@ function spawnBubble(){
   bubbleLayer.appendChild(b);
   setTimeout(()=> b.remove(), duration*1000 + 500);
 }
-setInterval(spawnBubble, 650);
-for(let i=0;i<10;i++) setTimeout(spawnBubble, i*300);
+setInterval(spawnBubble, 1000);
+for(let i=0;i<7;i++) setTimeout(spawnBubble, i*450);
 
 /* =====================================================
    DEPTH METER ON SCROLL
