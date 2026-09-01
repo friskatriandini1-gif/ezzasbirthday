@@ -649,37 +649,67 @@ section{width:100%;padding-left:20px;padding-right:20px}
 }
 
 
-  /* ============ SPIDER-MAN RED & WEB THEME ============ */
-  body{background:
-    radial-gradient(circle at 50% -10%, rgba(227,27,35,.20), transparent 32%),
-    linear-gradient(180deg,#26070a 0%,#120b10 24%,#090b12 58%,#05060a 100%);}
-  body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.18;background-image:
-    radial-gradient(circle at 50% 50%,transparent 0 52px,rgba(255,255,255,.35) 53px 54px,transparent 55px),
-    linear-gradient(25deg,transparent 49.6%,rgba(255,255,255,.25) 50%,transparent 50.4%),
-    linear-gradient(155deg,transparent 49.6%,rgba(255,255,255,.25) 50%,transparent 50.4%);background-size:180px 180px;}
-  .card{background:linear-gradient(145deg,rgba(35,10,13,.82),rgba(7,9,14,.78));border-color:rgba(227,27,35,.35);box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 30px rgba(227,27,35,.08);}
-  .eyebrow{color:#ff3b43;text-shadow:0 0 14px rgba(227,27,35,.35);}
-  .section-title{color:#fff7f7;text-shadow:0 0 24px rgba(227,27,35,.22);}
-  .hero .kicker{color:#67c7ff;}
-  .hero h1 .accent{background:linear-gradient(90deg,#ff3138,#0759a5);-webkit-background-clip:text;background-clip:text;color:transparent;}
-  .age-chip{background:rgba(227,27,35,.10);border-color:rgba(227,27,35,.38);box-shadow:0 0 30px rgba(227,27,35,.14);}
-  .age-chip b{color:#67c7ff;}
-  .scroll-hint .arrow,.tl-arrow{color:#ff3138;}
-  .depth-meter .fill{background:linear-gradient(180deg,#ff3138,#8e0007);}
-  .depth-meter .readout{color:#67c7ff;background:rgba(20,4,7,.72);border-color:rgba(227,27,35,.35);}
-  .btn,.enter-btn{background:linear-gradient(135deg,#ff2630,#0759a5)!important;border-color:#67c7ff!important;box-shadow:0 12px 30px rgba(0,0,0,.4),0 0 24px rgba(227,27,35,.22)!important;}
-  .btn:hover,.enter-btn:hover{filter:brightness(1.12);transform:translateY(-3px) scale(1.02);}
-  .compare-card,.flip-face,.arcade-card,.praise-card,.bottle-stage,.letter-paper{border-color:rgba(227,27,35,.28)!important;}
-  .compare-pill.now{background:#0759a5!important;color:#fff!important;}
-  .compare-line{background:linear-gradient(90deg,#ff3138,#0759a5)!important;}
-  .landing-spider-web{opacity:.45!important;filter:drop-shadow(0 0 8px rgba(227,27,35,.35));}
-  .music-player{background:rgba(13,7,10,.88)!important;border-color:rgba(227,27,35,.4)!important;}
-  .music-toggle{background:#0759a5!important;}
-  .music-player strong{color:#67c7ff!important;}
-  .quick-nav button{border-color:rgba(227,27,35,.4)!important;background:rgba(18,5,8,.85)!important;}
-  .quick-nav button:hover{background:#0759a5!important;}
-  @media(max-width:600px){body:before{background-size:120px 120px;opacity:.11}.card{border-radius:22px;}}
-
+  /* ============ OCEAN DEEP TRANSITION FIX ============ */
+html{background:#03192f;}
+body{
+  background:
+    radial-gradient(ellipse at 50% -8%, rgba(93,210,255,.15) 0%, rgba(22,115,172,.06) 24%, transparent 48%),
+    linear-gradient(180deg,
+      #0a4a74 0%,
+      #09436a 11%,
+      #083d61 22%,
+      #073757 34%,
+      #062f4d 47%,
+      #062943 60%,
+      #05233a 72%,
+      #041d32 84%,
+      #03182a 93%,
+      #021323 100%);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-attachment:scroll;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(110,220,255,.055),transparent 30%,rgba(0,16,38,.10) 78%,rgba(0,8,22,.18));
+  mix-blend-mode:screen;
+}
+.rays{
+  opacity:.48;
+  animation: oceanRayDrift 28s ease-in-out infinite alternate;
+}
+@keyframes oceanRayDrift{
+  0%{transform:translate3d(-1.5%,0,0) scale(1);opacity:.38}
+  50%{transform:translate3d(.5%,.7%,0) scale(1.018);opacity:.58}
+  100%{transform:translate3d(1.2%,-.2%,0) scale(1.01);opacity:.43}
+}
+.bubble{animation-duration:16s!important;opacity:.42}
+.card{background:linear-gradient(145deg,rgba(9,44,72,.58),rgba(2,18,35,.54));border-color:rgba(105,211,255,.16);}
+.eyebrow{color:#72dcff;text-shadow:0 0 14px rgba(95,224,255,.22)}
+.section-title{color:#eaf7fc;text-shadow:0 0 24px rgba(95,224,255,.16)}
+.hero h1 .accent{background:linear-gradient(90deg,#5fe0ff,#c4f5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.age-chip{background:rgba(95,224,255,.07);border-color:rgba(120,218,255,.18);box-shadow:0 0 30px rgba(95,224,255,.08)}
+.age-chip b{color:#8feaff}
+.scroll-hint .arrow,.tl-arrow{color:#65dfff}
+.depth-meter .fill{background:linear-gradient(180deg,#76e4ff,#0d6fa2)}
+.depth-meter .readout{color:#9feeff;background:rgba(2,18,35,.68);border-color:rgba(95,224,255,.16)}
+.btn,.enter-btn{background:linear-gradient(135deg,#4bd8ff,#9ceeff)!important;color:#03203a!important;border:1px solid rgba(201,247,255,.5)!important;box-shadow:0 12px 30px rgba(0,20,45,.35),0 0 24px rgba(95,224,255,.14)!important}
+.compare-card,.flip-face,.arcade-card,.praise-card,.bottle-stage,.letter-paper{border-color:rgba(105,211,255,.14)!important}
+.compare-pill.now{background:#0a5b7b!important;color:#e9fbff!important}
+.compare-line{background:linear-gradient(90deg,#5fe0ff,#b7f1ff)!important}
+.music-player{background:rgba(2,18,35,.78)!important;border-color:rgba(105,211,255,.18)!important}
+.music-toggle{background:#0b5476!important}
+.music-player strong{color:#9feeff!important}
+.quick-nav button{border-color:rgba(105,211,255,.18)!important;background:rgba(2,18,35,.76)!important}
+.quick-nav button:hover{background:#0b5476!important}
+@media(max-width:600px){
+  body{background-position:center top;}
+  body::after{background:linear-gradient(180deg,rgba(120,225,255,.04),transparent 28%,rgba(0,12,28,.15) 82%,rgba(0,7,18,.20));}
+}
 </style>
 
 <style id="ocean-theme-overrides">
