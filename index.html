@@ -9,16 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep:#03192f;
+    --deep:#090b12;
     --panel: rgba(255,255,255,0.055);
     --panel-border: rgba(255,255,255,0.14);
-    --cyan:#5fe0ff;
-    --cyan-soft:#9fedff;
-    --teal:#1a8fb0;
-    --foam:#eaf7fc;
-    --text:#dcf1fb;
-    --text-soft:#9db8cc;
-    --gold:#ffd88a;
+    --cyan:#e31b23;
+    --cyan-soft:#ff5960;
+    --teal:#b40009;
+    --foam:#fff7f7;
+    --text:#ffe9ea;
+    --text-soft:#c9a9aa;
+    --gold:#ffffff;
     --shadow: 0 24px 60px rgba(0,10,25,0.5);
   }
   *{box-sizing:border-box;}
@@ -28,8 +28,7 @@
     font-family:'Poppins', sans-serif;
     color:var(--text);
     background: linear-gradient(180deg,
-      #08375c 0%, #0a3357 12%, #0c2f4f 26%, #0b2745 42%,
-      #081f39 58%, #061a30 74%, #04142688 88%, #030d1c 100%),
+      #26070a 0%, #170b10 18%, #0c0e15 42%, #080a10 70%, #05060a 100%),
       var(--deep);
     position:relative;
     overflow-x:hidden;
@@ -649,12 +648,47 @@ section{width:100%;padding-left:20px;padding-right:20px}
  .landing-note{font-size:10px;margin-top:11px;}
 }
 
+
+  /* ============ SPIDER-MAN RED & WEB THEME ============ */
+  body{background:
+    radial-gradient(circle at 50% -10%, rgba(227,27,35,.20), transparent 32%),
+    linear-gradient(180deg,#26070a 0%,#120b10 24%,#090b12 58%,#05060a 100%);}
+  body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.18;background-image:
+    radial-gradient(circle at 50% 50%,transparent 0 52px,rgba(255,255,255,.35) 53px 54px,transparent 55px),
+    linear-gradient(25deg,transparent 49.6%,rgba(255,255,255,.25) 50%,transparent 50.4%),
+    linear-gradient(155deg,transparent 49.6%,rgba(255,255,255,.25) 50%,transparent 50.4%);background-size:180px 180px;}
+  .card{background:linear-gradient(145deg,rgba(35,10,13,.82),rgba(7,9,14,.78));border-color:rgba(227,27,35,.35);box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 30px rgba(227,27,35,.08);}
+  .eyebrow{color:#ff3b43;text-shadow:0 0 14px rgba(227,27,35,.35);}
+  .section-title{color:#fff7f7;text-shadow:0 0 24px rgba(227,27,35,.22);}
+  .hero .kicker{color:#ff5960;}
+  .hero h1 .accent{background:linear-gradient(90deg,#ff3138,#b40009);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .age-chip{background:rgba(227,27,35,.10);border-color:rgba(227,27,35,.38);box-shadow:0 0 30px rgba(227,27,35,.14);}
+  .age-chip b{color:#ff5960;}
+  .scroll-hint .arrow,.tl-arrow{color:#ff3138;}
+  .depth-meter .fill{background:linear-gradient(180deg,#ff3138,#8e0007);}
+  .depth-meter .readout{color:#ff5960;background:rgba(20,4,7,.72);border-color:rgba(227,27,35,.35);}
+  .btn,.enter-btn{background:linear-gradient(135deg,#ff2630,#b40009)!important;border-color:#ff5960!important;box-shadow:0 12px 30px rgba(0,0,0,.4),0 0 24px rgba(227,27,35,.22)!important;}
+  .btn:hover,.enter-btn:hover{filter:brightness(1.12);transform:translateY(-3px) scale(1.02);}
+  .compare-card,.flip-face,.arcade-card,.praise-card,.bottle-stage,.letter-paper{border-color:rgba(227,27,35,.28)!important;}
+  .compare-pill.now{background:#b40009!important;color:#fff!important;}
+  .compare-line{background:linear-gradient(90deg,#ff3138,#b40009)!important;}
+  .landing-spider-web{opacity:.45!important;filter:drop-shadow(0 0 8px rgba(227,27,35,.35));}
+  .music-player{background:rgba(13,7,10,.88)!important;border-color:rgba(227,27,35,.4)!important;}
+  .music-toggle{background:#b40009!important;}
+  .music-player strong{color:#ff5960!important;}
+  .quick-nav button{border-color:rgba(227,27,35,.4)!important;background:rgba(18,5,8,.85)!important;}
+  .quick-nav button:hover{background:#b40009!important;}
+  @media(max-width:600px){body:before{background-size:120px 120px;opacity:.11}.card{border-radius:22px;}}
+
 </style>
 </head>
 <body>
 
 <!-- ============ AUDIO (ganti src di audio/backsound.mp3) ============ -->
 <audio id="bgm" loop preload="auto"></audio>
+<div id="audioPickerWrap" style="position:fixed;right:14px;bottom:14px;z-index:60;display:none">
+  <label style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(12,6,8,.92);border:1px solid rgba(227,27,35,.45);color:#fff;font:600 11px Poppins,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.35)">🕷️ pilih lagu<input id="audioFile" type="file" accept="audio/*" style="display:none"></label>
+</div>
 <div class="music-player" id="musicPlayer">
   <button class="music-toggle" id="musicToggle" aria-label="Putar atau jeda musik">🎵</button>
   <div class="music-info">
@@ -1012,6 +1046,19 @@ const landing = document.getElementById('landing');
 const landingPetals = document.getElementById('landingPetals');
 const enterBtn = document.getElementById('enterBtn');
 const bgm = document.getElementById('bgm');
+const audioFile = document.getElementById('audioFile');
+const audioPickerWrap = document.getElementById('audioPickerWrap');
+if(audioFile){
+  audioPickerWrap.style.display='block';
+  audioFile.addEventListener('change',()=>{
+    const file=audioFile.files && audioFile.files[0];
+    if(!file) return;
+    bgm.src=URL.createObjectURL(file);
+    musicStatus.textContent='lagu siap diputar';
+    musicToggle.textContent='▶️';
+  });
+}
+
 const musicToggle = document.getElementById('musicToggle');
 const musicPlayer = document.getElementById('musicPlayer');
 const musicStatus = document.getElementById('musicStatus');
@@ -1049,7 +1096,7 @@ enterBtn.addEventListener('click',()=>{
   if(bgm){
     bgm.volume=.5;
     bgm.play().then(()=>{musicToggle.textContent='🔊';musicPlayer.classList.add('playing');musicStatus.textContent='sedang diputar';})
-      .catch(()=>{musicToggle.textContent='🎵';musicPlayer.classList.remove('playing');musicStatus.textContent='tekan untuk memutar';});
+      .catch(()=>{musicToggle.textContent='🎵';musicPlayer.classList.remove('playing');musicStatus.textContent=bgm.src?'tekan untuk memutar':'pilih file lagu dulu';});
   }
   setTimeout(()=>landing.classList.add('hide'),950);
 });
