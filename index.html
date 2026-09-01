@@ -724,7 +724,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 <!-- ============ AUDIO (ganti src di audio/backsound.mp3) ============ -->
 <audio id="bgm" src="backsound.mp3" loop preload="auto"></audio>
 <div id="audioPickerWrap" style="position:fixed;right:14px;bottom:14px;z-index:60;display:none">
-  <label style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(12,6,8,.92);border:1px solid rgba(227,27,35,.45);color:#fff;font:600 11px Poppins,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.35)">🕷️ pilih lagu<input id="audioFile" type="file" accept="audio/*" style="display:none"></label>
+  <label style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(12,6,8,.92);border:1px solid rgba(227,27,35,.45);color:#fff;font:600 11px Poppins,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.35)">🕷️ pilih lagu<input id="audioFile" type="file" accept="/*backsound.mp3" style="display:none"></label>
 </div>
 <div class="music-player" id="musicPlayer">
   <button class="music-toggle" id="musicToggle" aria-label="Putar atau jeda musik">🎵</button>
